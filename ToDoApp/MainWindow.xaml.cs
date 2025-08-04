@@ -20,5 +20,19 @@ namespace ToDoApp
         {
             InitializeComponent();
         }
+
+        private void AddTodoButto_click(object sender, RoutedEventArgs e)
+        {
+            string todoText=TodoInput.Text;
+            if (!string.IsNullOrEmpty(todoText)) {
+                TextBlock todoItem = new TextBlock { 
+                  Text = todoText,
+                  Foreground=new SolidColorBrush(Colors.White),
+                  Margin=new Thickness(10)
+                };
+                TodoList.Children.Add(todoItem);
+                TodoInput.Clear();
+            }
+        }
     }
 }
